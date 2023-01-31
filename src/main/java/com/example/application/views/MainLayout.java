@@ -3,7 +3,8 @@ package com.example.application.views;
 
 import com.example.application.components.appnav.AppNav;
 import com.example.application.components.appnav.AppNavItem;
-import com.example.application.views.list.ListView;
+import com.example.application.views.idiom.IdiomView;
+import com.example.application.views.phrasal.PhrasalView;
 import com.vaadin.flow.component.applayout.AppLayout;
 import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.html.Footer;
@@ -38,7 +39,7 @@ public class MainLayout extends AppLayout {
     }
 
     private void addDrawerContent() {
-        H1 appName = new H1("idiom-front");
+        H1 appName = new H1("Idiom & Phrasal ");
         appName.addClassNames(LumoUtility.FontSize.LARGE, LumoUtility.Margin.NONE);
         Header header = new Header(appName);
 
@@ -52,7 +53,8 @@ public class MainLayout extends AppLayout {
         // For documentation, visit https://github.com/vaadin/vcf-nav#readme
         AppNav nav = new AppNav();
 
-        nav.addItem(new AppNavItem("List", ListView.class, "la la-columns"));
+        nav.addItem(new AppNavItem("Idiom List", IdiomView.class, "la la-columns"));
+        nav.addItem(new AppNavItem("Phrasal Verb List", PhrasalView.class, "la la-columns"));
 
         return nav;
     }
